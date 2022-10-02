@@ -49,8 +49,22 @@ SELECT * FROM ORACLE_USER.TRACK; /* user(MATHIAS) não tem acesso a essa tabela 
 SELECT UNITPRICE FROM mathias_track; /* a coluna não existe nessa view */
 /* Resposta: Dada a permissão para o user(MATHIAS) de ver a view mathias_track, esse user, não teve acesso a ver coluna
    UNITPRICE */
+
 /* QUESTÃO 5 */
-/* Resposta: */
+CREATE VIEW album_track AS
+SELECT A.ALBUMID, A.TITLE, A.ARTISTID, T.TRACKID, T.UNITPRICE
+FROM TRACK T JOIN ALBUM A ON A.ALBUMID = T.ALBUMID;
+
+SELECT * FROM ORACLE_USER.album_track;
+
+UPDATE album_track SET TITLE = 'Rock Brabo' WHERE ALBUMID = 29;
+
+UPDATE album_track SET UNITPRICE = 0.99 WHERE ALBUMID = 29;
+
+/* Resposta: Algum tipo de erro na atualização do título, qunado utilizado o "WHERE ALBUMID = 29", já na atualização do
+   UNITPRICE, não deu erro */
+
 /* QUESTÃO 6 */
+
 /* Resposta: */
 
