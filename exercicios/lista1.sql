@@ -22,7 +22,7 @@ MAXVALUE 15
 MINVALUE 0;
 
 CREATE USER mathias IDENTIFIED BY oracle_password;
-GRANT CONNECT, RESOURCE, CREATE SESSION, DBA TO mathias;
+GRANT CONNECT, RESOURCE, CREATE SESSION TO mathias;
 
 SELECT ORACLE_USER.SEQUENCIA.nextval FROM dual;
 
@@ -31,3 +31,5 @@ GRANT SELECT ON ORACLE_USER.SEQUENCIA TO MATHIAS;
 /* Resposta: No primeiro caso, deu falha por falta de privilêgios do segundo user, já no segundo caso, o user(MATHIAS) conseguiu usar o comandod */
 
 /* QUESTÃO 3 */
+SELECT ORACLE_USER.SEQUENCIA.currval FROM dual;
+
