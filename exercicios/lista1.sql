@@ -27,9 +27,18 @@ GRANT CONNECT, RESOURCE, CREATE SESSION TO mathias;
 SELECT ORACLE_USER.SEQUENCIA.nextval FROM dual;
 
 GRANT SELECT ON ORACLE_USER.SEQUENCIA TO MATHIAS;
-
-/* Resposta: No primeiro caso, deu falha por falta de privilêgios do segundo user, já no segundo caso, o user(MATHIAS) conseguiu usar o comandod */
+/* Resposta: No primeiro caso, deu falha por falta de privilêgios do segundo user, já no segundo caso, o user(MATHIAS)
+   conseguiu usar o comandod */
 
 /* QUESTÃO 3 */
 SELECT ORACLE_USER.SEQUENCIA.currval FROM dual;
+/* Resposta: Para o user inicial deu X e para o user(MATHIAS) deu X-1. Criando uma nova conexão com o mesmo user, ainda
+   assim o comportamento se repete */
+
+/* QUESTÃO 4 */
+/* Resposta: */
+/* QUESTÃO 5 */
+/* Resposta: */
+/* QUESTÃO 6 */
+/* Resposta: */
 
