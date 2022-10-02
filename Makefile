@@ -11,6 +11,9 @@ build-development:
 start:
 	docker-compose up -d --quiet-pull
 
+configure:
+	sh ./configure.sh
+
 stop:
 	docker-compose down
 

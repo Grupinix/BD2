@@ -3,6 +3,7 @@ version: "3.8"
 services:
   oracle-xe:
     image: gvenzl/oracle-xe:latest
+    container_name: bd2-oracle
     networks:
       - bd2-network
     env_file: .env
