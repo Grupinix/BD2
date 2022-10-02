@@ -5,10 +5,7 @@ services:
     image: gvenzl/oracle-xe:latest
     networks:
       - bd2-network
-    environment:
-      ORACLE_RANDOM_PASSWORD: true
-      APP_USER: oracle_user
-      APP_USER_PASSWORD: oracle_password
+    env_file: .env
     ports:
       - "1521:1521"
 
