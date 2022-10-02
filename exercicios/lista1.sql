@@ -15,3 +15,18 @@ UPDATE qtd_trilhas_album
 /* Resposta: dá erro, não da atualizar uma VIEW que utiliza 2 tabelas (ORACLE) */
 
 /* QUESTÃO 2 */
+CREATE SEQUENCE sequencia
+INCREMENT BY -1
+START WITH 10
+MAXVALUE 15
+MINVALUE 0;
+
+CREATE USER mathias IDENTIFIED BY oracle_password;
+
+SELECT ORACLE_USER.SEQUENCIA.nextval FROM dual;
+
+GRANT SELECT ON ORACLE_USER.SEQUENCIA TO MATHIAS;
+
+/* Resposta: No primeiro caso, deu falha por falta de privilêgios do segundo user, já no segundo caso, o user(MATHIAS) conseguiu usar o comandod */
+
+/* QUESTÃO 3 */
