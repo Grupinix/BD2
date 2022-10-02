@@ -65,6 +65,11 @@ UPDATE album_track SET UNITPRICE = 0.99 WHERE ALBUMID = 29;
    UNITPRICE, não deu erro */
 
 /* QUESTÃO 6 */
+SELECT * FROM TRACK WHERE ALBUMID = 11;
 
-/* Resposta: */
+CREATE INDEX track_index ON TRACK(ALBUMID);
+
+EXPLAIN PLAN FOR SELECT * FROM TRACK WHERE ALBUMID = 11;
+SELECT * FROM TABLE(dbms_xplan.display('plan_table',null,'basic'));
+/* Resposta: Ai em cima */
 
