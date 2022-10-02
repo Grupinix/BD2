@@ -12,7 +12,7 @@ start:
 	docker-compose up -d --quiet-pull
 
 configure:
-	sh ./configure.sh
+	bash ./configure.sh
 
 stop:
 	docker-compose down
