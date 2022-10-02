@@ -36,7 +36,19 @@ SELECT ORACLE_USER.SEQUENCIA.currval FROM dual;
    assim o comportamento se repete */
 
 /* QUESTÃO 4 */
-/* Resposta: */
+CREATE VIEW mathias_track AS
+SELECT TRACKID, NAME, ALBUMID, MEDIATYPEID, GENREID, COMPOSER, MILLISECONDS, BYTES
+FROM TRACK;
+
+GRANT SELECT ON ORACLE_USER.mathias_track TO Mathias;
+
+SELECT * FROM mathias_track;
+
+SELECT * FROM ORACLE_USER.TRACK; /* user(MATHIAS) não tem acesso a essa tabela */
+
+SELECT UNITPRICE FROM mathias_track; /* a coluna não existe nessa view */
+/* Resposta: Dada a permissão para o user(MATHIAS) de ver a view mathias_track, esse user, não teve acesso a ver coluna
+   UNITPRICE */
 /* QUESTÃO 5 */
 /* Resposta: */
 /* QUESTÃO 6 */
